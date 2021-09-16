@@ -1,1 +1,1 @@
-web: gunicorn DataFlair_NewsAggregator.wsgi --log-file -
+web: gunicorn DataFlair_NewsAggregator.wsgi --log-file - 
