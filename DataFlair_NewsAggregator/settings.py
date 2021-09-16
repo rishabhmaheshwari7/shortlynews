@@ -25,7 +25,7 @@ SECRET_KEY = '0zh7ya_au-oti-c$ecz@o)v254i%cn7o9@mtoab=pg$oc#(bv5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','sampledomain.com']
+ALLOWED_HOSTS = ['127.0.0.1','shortlynews.herokuapp.com']
 
 
 # Application definition
