@@ -3,21 +3,23 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body style="background-color: rgb(10,16,10);">
+<body style="background-color: rgb(53,56,53);">
 	<div align="center" class="jumbotron jumbotron-fluid" style="background-color:rgba(136,136,136,0.5);padding: 15px;">
 		<h1 class="display-4" style="color:lightgrey;">DAILY NEWS HEADLINES</h1>
+		<h5 style="color:lightgray;">SELECT NEWS</h5>
 		<div class="btn-group mr-2" role="group" aria-label="Basic example">
 			<form method="POST" action="{% url 'scrape1' %}">
 				{% csrf_token %}
-				<button type="submit" class="btn btn-dark" >India News</button>
+				<button type="submit" class="btn btn-dark" style="color: whitesmoke;font-size:18px;" >India News</button>
 			</form>
 			<br>
 		</div>	
 		<div class="btn-group mr-2" role="group" aria-label="Basic example">
 			<form method="POST"  action="{% url 'scrape2' %}">
 				{% csrf_token %}
-				<button type="submit" class="btn btn-dark" >World News</button>
+				<button type="submit" class="btn btn-dark" style="color: whitesmoke;font-size:18px;">World News</button>
 			</form>
 		</div>
 		
@@ -25,7 +27,6 @@
 
 
 <div class="container-fluid">
-		<div class="card-columns">
 			{% for object in object_list %}
 			<!--
 			<div class="card" style="width: 18rem;border:5px black solid;">
@@ -37,17 +38,18 @@
 			</div>
 		  </div> -->
 
-		 <div class="card" style="width: 18rem; background-color:rgba(136,136,136,0.5)">
-			<div class="card-header"><h5 class="card-title">Headline</h5></div>
+		 <div class="card" style="width: 100%; background-color:rgba(136,136,136,0.5);
+		 box-shadow: 0 4px 8px 0 rgba(10,10,10, 0.7), 0 6px 20px 0 rgba(10,10,10, 0.7);">
+			<div class="card-header"><h5 class="card-title" style="color: lightgray;font-size:22px;">Headline</h5></div>
 			  	<div class="card-body">
-				    <p class="card-text" style="color: white;">{{object.title}}</p>
+				    <p class="card-text" style="color: white;font-size:22px;">{{object.title}}</p>
 				   <!-- <a href="#" class="btn btn-dark">Go somewhere</a>  "add the links to news later --> 
 				</div>
 		</div>
 			<br>
 
 		  {% endfor %}
-	</div>	 
+	 
 </div>
 
 <!-- <div style="padding: 20px;">
