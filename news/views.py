@@ -54,7 +54,7 @@ def scrape2(request):
 	world=soup2.select('h3')
 	world.reverse() #since last news will be added first on page to counter that we revrese the list
 	l2=len(world)
-	for i in range(0,(50)):
+	for i in range(0,l2):
 		main = "this is main"
 		link = "this is link"
 		image_src = "https://www.google.com/search?q=dog+image&rlz=1C1CHBF_enIN748IN749&tbm=isch&source=iu&ictx=1&fir=wzRcY9R2ANhK-M%252C2r6Arj4-hBjhNM%252C_&vet=1&usg=AI4_-kQbPIKZLBKrUZUUeg-qSC-u-gUmkg&sa=X&ved=2ahUKEwiywYKV0IHzAhUFheYKHXp4CAoQ9QF6BAgQEAE#imgrc=wzRcY9R2ANhK-M"
