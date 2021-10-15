@@ -32,13 +32,15 @@ def scrape1(request):
 	res1 = requests.get('https://news.google.com/topics/CAAqIQgKIhtDQkFTRGdvSUwyMHZNRE55YXpBU0FtVnVLQUFQAQ?hl=en)-IN&gl=IN&ceid=IN%3Aen')
 	soup1 = bs4.BeautifulSoup(res1.text)
 	ind=soup1.select('h3')
+	obe = soup1.find_all("img", class_="tvs3Id QwxBBf")
 	ind.reverse() #since last news will be added first on page to counter that we revrese the list
+	obe.reverse()
 	l1=len(ind)
-	for i in range(0,int(25)): #its too many results right now
+	for i in range(0,25): #its too many results right now
 		#for artcile in News:
 		main = "this is main"
 		link = "this is link"
-		image_src = "https://www.google.com/search?q=dog+image&rlz=1C1CHBF_enIN748IN749&tbm=isch&source=iu&ictx=1&fir=wzRcY9R2ANhK-M%252C2r6Arj4-hBjhNM%252C_&vet=1&usg=AI4_-kQbPIKZLBKrUZUUeg-qSC-u-gUmkg&sa=X&ved=2ahUKEwiywYKV0IHzAhUFheYKHXp4CAoQ9QF6BAgQEAE#imgrc=wzRcY9R2ANhK-M"
+		image_src = obe[i].get('src') 
 		title = "title"
 		new_headline = Headline()
 		new_headline.title = ind[i].getText()
@@ -51,13 +53,16 @@ def scrape1(request):
 def scrape2(request):
 	res2=requests.get('https://news.google.com/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGx1YlY4U0FtVnVHZ0pKVGlnQVAB?hl=en-IN&gl=IN&ceid=IN%3Aen')
 	soup2 = bs4.BeautifulSoup(res2.text)
+	
 	world=soup2.select('h3')
+	obe1 = soup2.find_all("img", class_="tvs3Id QwxBBf")
 	world.reverse() #since last news will be added first on page to counter that we revrese the list
+	obe1.reverse()
 	l2=len(world)
 	for i in range(0,25):
 		main = "this is main"
 		link = "this is link"
-		image_src = "https://www.google.com/search?q=dog+image&rlz=1C1CHBF_enIN748IN749&tbm=isch&source=iu&ictx=1&fir=wzRcY9R2ANhK-M%252C2r6Arj4-hBjhNM%252C_&vet=1&usg=AI4_-kQbPIKZLBKrUZUUeg-qSC-u-gUmkg&sa=X&ved=2ahUKEwiywYKV0IHzAhUFheYKHXp4CAoQ9QF6BAgQEAE#imgrc=wzRcY9R2ANhK-M"
+		image_src = obe1[i].get('src') 
 		title = "title"
 		new_headline = Headline()
 		new_headline.title = world[i].getText()
