@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body style="background-color: rgb(53,56,53);">
-	<div align="center" class="jumbotron jumbotron-fluid" style="background-color:rgba(136,136,136,0.5);padding: 15px;">
+	<div align="center" class="jumbotron jumbotron-fluid" style="background-color:rgba(34,34,33);padding: 15px;">
 		<h1 class="display-4" style="color:lightgrey;">DAILY NEWS HEADLINES</h1>
 		<h5 style="color:lightgray;">SELECT NEWS</h5>
 		<div class="btn-group mr-2" role="group" aria-label="Basic example">
@@ -38,18 +38,21 @@
 			</div>
 		  </div> -->
 
-		 <div class="card" style="width: 100%; background-color:rgba(136,136,136,0.5);
+		 <div class="card" style="width: 100%; background-color:rgba(19,20,23,0.6);
 		 box-shadow: 0 4px 8px 0 rgba(10,10,10, 0.7), 0 6px 20px 0 rgba(10,10,10, 0.7);">
-			<div class="card-header"><h5 class="card-title" style="color: lightgray;font-size:22px;">Headline</h5></div>
-			  	<div class="card-body">
-				    <p class="card-text" style="color: white;font-size:22px;">{{object.title}}</p>
-				   <!-- <a href="#" class="btn btn-dark">Go somewhere</a>  "add the links to news later --> 
+			<div class="card-header"><h5 class="card-title" style=" color: lightgray;font-size:22px;">Headline</h5></div>
+			  	<div style="display: flex; padding: 5px;">
+				<div><img src="{{object.image}}" style="border-radius:15px ;padding: 5px;" width="100px" height="100px"></img></div>
+					  	<div class="card-body">
+						    <p class="card-text" style="color: white;font-size:22px;">{{object.title}}</p>
+
+						   <!-- <a href="#" class="btn btn-dark">Go somewhere</a>   -->
+						</div>
+					</div>
 				</div>
-		</div>
 			<br>
 
 		  {% endfor %}
-	 
 </div>
 
 <!-- <div style="padding: 20px;">
