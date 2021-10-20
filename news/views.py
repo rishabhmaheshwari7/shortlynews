@@ -22,13 +22,6 @@ def news_list(request):
 	return render(request, "news/home.html", context)
 
 def scrape1(request):
-	# session = requests.Session()
-	# session.headers = {"User-Agent": "Googlebot/2.1 (+http://www.google.com/bot.html)"}
-	# url = "https://www.theonion.com/"
-
-	# content = session.get(url, verify=False).content
-	# soup = BSoup(content, "html.parser")
-	# News = soup.find_all('div', {"class":"curation-module__item"})
 	res1 = requests.get('https://news.google.com/topics/CAAqIQgKIhtDQkFTRGdvSUwyMHZNRE55YXpBU0FtVnVLQUFQAQ?hl=en)-IN&gl=IN&ceid=IN%3Aen')
 	soup1 = bs4.BeautifulSoup(res1.text)
 	ind=soup1.select('h3')
