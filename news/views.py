@@ -59,7 +59,7 @@ def scrape2(request):
 	world.reverse() #since last news will be added first on page to counter that we revrese the list
 	obe1.reverse()
 	l2=len(world)
-	for i in range(0,25):
+	for i in range(0,35):
 		main = "this is main"
 		link = "this is link"
 		image_src = obe1[i].get('src') 
